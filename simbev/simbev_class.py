@@ -525,6 +525,8 @@ class SimBEV:
             public_count = 0
             for car_type_name, car_count in region.car_dict.items():
                 for car_number in range(car_count):
+                    # Update driving profile seed
+                    self.driving_profile_seed += 1
                     # Create new car
                     if "max_charging_capacity_slow" in self.tech_data.columns:
                         car_type = self.car_types[car_type_name]
@@ -608,6 +610,7 @@ class SimBEV:
                             self.input_data[region.region_type.rs3_type][
                                 car_type_name.split("_")[-1]
                             ],
+                            self.driving_profile_seed,
                         )
 
                     if self.num_threads == 1:
