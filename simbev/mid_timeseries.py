@@ -223,7 +223,7 @@ def get_empty_timeseries(start_date, end_date, step_size):
     return pd.DataFrame([0] * len(date_range), index=date_range)
 
 
-def get_profile_time_series(start_date, end_date, step_size, df):
+def get_profile_time_series(start_date, end_date, step_size, df, seed):
     """
     Returns a time series starting from the start date up until the end date filled with
     week data chosen at random from the input DataFrame for each week.
@@ -258,6 +258,7 @@ def get_profile_time_series(start_date, end_date, step_size, df):
     week_start = start_date
     time_step = 0
     steps_per_day = 1440 / step_size
+    np.random.seed(seed)
     while week_start <= end_date:
         # Select a random ID from the input DataFrame
 
