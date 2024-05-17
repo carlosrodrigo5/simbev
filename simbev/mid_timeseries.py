@@ -238,6 +238,8 @@ def get_profile_time_series(start_date, end_date, step_size, df, seed):
         Step size of the simulation in minutes.
     df : pd.DataFrame
         The input DataFrame containing week data, where each entry with the same ID belongs to the same week.
+    seed : int
+        Seed for the random number generator.
 
     Returns
     -------
