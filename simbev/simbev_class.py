@@ -1093,7 +1093,9 @@ class SimBEV:
                 "basic", "consumption_factor_highway", fallback=1.0
             ),
             "rng_seed": cfg["sim_params"].getint("seed", None),
-            "driving_profile_seed": cfg["sim_params"].getint("driving_profile_seed", None),
+            "driving_profile_seed": cfg["sim_params"].getint(
+                "driving_profile_seed", None
+            ),
             "eta_cp": cfg.getfloat("basic", "eta_cp", fallback=1),
             "start_date": start_date,
             "end_date": end_date,
