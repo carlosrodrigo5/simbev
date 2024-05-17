@@ -277,6 +277,7 @@ class SimBEV:
                     file_path_parts[-1]
                 ] = pd.read_parquet(file_path)
         self.scaling = config_dict["scaling"]
+        self.driving_profile_seed = config_dict["driving_profile_seed"]
         # additional parameters
         self.regions: List[Region] = []
         self.created_region_types = {}
